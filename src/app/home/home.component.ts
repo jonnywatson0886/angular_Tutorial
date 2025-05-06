@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {HousingLocationComponent} from '../housing-location/housing-location.component';
 import { CommonModule } from '@angular/common';
-import { HousingLocation } from '../housing-location';
+import { HousingLocation } from '../housinglocation';
 
 
 @Component({
@@ -19,7 +19,7 @@ import { HousingLocation } from '../housing-location';
     </form>
    </section>
    <section class="results">
-    <app-housing-location></app-housing-location> 
+    <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
   </section>
   `,
   styleUrl: './home.component.css'
@@ -33,7 +33,7 @@ export class HomeComponent {
       name: 'Test Home',
       city: 'Tesst City',
       state: 'ST',
-      photo: '${this.baseUrl}/example-house.jpg',
+      photo: `${this.baseUrl}/example-house.jpg`,
       availableUnits: 99,
       wifi: true,
       laundry: false
